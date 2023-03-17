@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-import Core.Game;
+import Core.*;
+import Util.Help;
 
 public class Menu {
     public static void main(String[] args) {
@@ -10,19 +11,24 @@ public class Menu {
         while (true) {
             String status = input.nextLine().toLowerCase();
 
-            if (status.equals("solo") == true || status.equals("multiplayer") == true) 
+            if (status.equals("solo") == true) 
             {
                 new Game();
+            }
+            else if (status.equals("multiplayer") == true)
+            {
+                new Lobby();
             }
             else if (status.equals("help"))
             {
                 new Help();
             }
+            //ask again
             else
             {
                 continue;
             }
-            input.close();
+            input.close(); //prevent memory leak
             break;
         }
     }
