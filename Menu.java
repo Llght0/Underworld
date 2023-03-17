@@ -17,7 +17,7 @@ public class Menu {
             }
             else if (status.equals("multiplayer") == true)
             {
-                new Lobby();
+                Lobby.main(args);
             }
             else if (status.equals("help"))
             {
